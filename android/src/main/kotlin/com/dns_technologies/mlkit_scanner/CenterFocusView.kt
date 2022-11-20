@@ -54,12 +54,12 @@ class CenterFocusView(context: Context) : FrameLayout(context), Animation.Animat
 
     private fun createGestureDetector(): GestureDetector {
         return GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-            override fun onSingleTapUp(e: MotionEvent?): Boolean {
+             fun onSingleTapUp(e: MotionEvent?): Boolean {
                 autoFocus()
                 return true
             }
 
-            override fun onLongPress(e: MotionEvent?) {
+             fun onLongPress(e: MotionEvent?) {
                 lockFocus()
             }
         })
@@ -130,7 +130,7 @@ class CenterFocusView(context: Context) : FrameLayout(context), Animation.Animat
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
+    override fun onTouchEvent(event: MotionEvent): Boolean {
         return gestureDetector.onTouchEvent(event)
     }
 
